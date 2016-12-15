@@ -35,18 +35,10 @@ class Command;
     cycle_delay <= 1000;
 
     // overflow and underflow checks
-    constraint add_overflow {
-      (data1 + data2) == (8’xffffffff + 1)
-    };
-    constraint add_full {
-      (data1 + data2) == (8’xffffffff)
-    };
-    constraint subtract_equal {
-      (data1 == data2)
-    };
-    constraint subtract_underflow_by_one {
-      (data2 == data1 + 1)
-    };
+    (data1 + data2) == (8’xffffffff + 1); // add_overflow
+    //(data1 + data2) == (8’xffffffff); // add_full
+    //(data1 == data2); // subtract_equal
+    //(data2 == data1 + 1); // subtract_underflow_by_one
 
   }
 
